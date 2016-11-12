@@ -27,6 +27,9 @@
                     right_side_bar:{
                         templateUrl: "base_template/common_partials/_right_side_bar.html"
                     },
+                    content_wrapper:{
+                        templateUrl: "base_template/common_partials/_content_wrapper.html"
+                    },
                     left_side_bar:{
 
                         templateUrl: "base_template/common_partials/_left_side_bar.html"
@@ -39,15 +42,15 @@
                 }
             }).state('base_template.partials.home', {
             url: "/home",
-            templateUrl: "home/home.html",
-            controller: "homeController",
-            controllerAs: "homeController"
+            views:{
+                'content@base_template.partials':{
+                    templateUrl: "home/home.html",
+                    controller: "homeController",
+                    controllerAs: "homeController"
+                }
+            }
 
         });
-
-        /* Add New Routes Above */
-        $urlRouterProvider.otherwise('/home');
-
     }
 
 })();

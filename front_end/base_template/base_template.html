@@ -10,23 +10,8 @@
 
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header animated fadeInRight">
-        <h1>
-            Dashboard
-            <small>Control panel</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-        </ol>
-    </section>
+<div class="content-wrapper" ui-view="content_wrapper">
 
-    <!-- Main content -->
-    <section class="content" ui-view>
-
-    </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
 
@@ -35,7 +20,7 @@
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark" ui-view="right_side_bar">
-    </aside>
+</aside>
 <div class="control-sidebar-bg"></div>
 
 
