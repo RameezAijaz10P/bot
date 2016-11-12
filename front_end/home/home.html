@@ -1,5 +1,156 @@
-<!-- Small boxes (Stat box) -->
 <div class="row">
-</div><!-- /.row -->
-<!-- Main row -->
-<h1>Hello World</h1>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box box box-solid">
+            <span class="info-box-icon bg-green">
+                <i class="fa fa-usd"></i>
+            </span>
+            <div class="info-box-content">
+                <span class="info-box-text">Cash Earned Today</span>
+                <span class="info-box-number">$0.00</span>
+            </div>
+            <!-- Remove this dude when data is loaded-->
+            <div class="overlay">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box box box-solid">
+            <span class="info-box-icon bg-yellow">
+                <i class="fa fa-hourglass"></i>
+            </span>
+            <div class="info-box-content">
+                <span class="info-box-text">Hours Worked Today</span>
+                <span class="info-box-number">0.00</span>
+            </div>
+            <!-- Remove this dude when data is loaded-->
+            <div class="overlay">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box box box-solid">
+            <span class="info-box-icon bg-green">
+                <i class="fa fa-usd"></i>
+            </span>
+            <div class="info-box-content">
+                <span class="info-box-text">Total Cash Earned</span>
+                <span class="info-box-number">$0.00</span>
+            </div>
+            <!-- Remove this dude when data is loaded-->
+            <div class="overlay">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box box box-solid">
+            <!-- 
+                Pull data from OpenWeatherApp or something. 
+                Make the icon:
+                    fa-tint, blue if rain
+                    fa-sun-o, yellow if sunny
+                    fa-snowflake-o, grey or something if snow
+            -->
+            <span class="info-box-icon bg-blue">
+                <i class="fa fa-tint"></i>
+            </span>
+            <div class="info-box-content">
+                <span class="info-box-text">Weather</span>
+                <span class="info-box-number">64F, Rain</span>
+            </div>
+            <!-- Remove this dude when data is loaded-->
+            <div class="overlay">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3 col-xs-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Controls</h3>
+            </div>
+            <div class="box-body">
+                <a class="btn btn-app">
+                    <i class="fa fa-clock-o"></i>
+                    <!-- Change to Clock Out if the user is currently clocked in. -->
+                    Clock In
+                </a>
+                <a class="btn btn-app" href="#/history">
+                    <i class="fa fa-history"></i>
+                    History
+                </a>
+                <a class="btn btn-app" href="#/stats">
+                    <i class="fa fa-bar-chart"></i>
+                    Stats
+                </a>
+            </div>
+        </div>        
+    </div>
+    <div class="col-sm-9 col-xs-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Quick History</h3>
+            </div>
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table no-margin table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Date
+                                </th>
+                                <th class="hidden-xs">
+                                    Hours Worked
+                                </th>
+                                <th class="visible-xs">Hours</th>
+                                <th>
+                                    Money Earned
+                                </th>
+                                <th class="hidden-xs">
+                                    Project
+                                </th>
+                            </tr>                        
+                        </thead>
+                        <tbody>
+                            <!-- 
+                                Show the days of the past week, starting at Sunday.
+                                If it's Tuesday, Only show Sunday, Monday, and Tuesday.
+                                Don't show any days from last week!
+                            -->
+                            <tr>
+                                <!-- Link this to the page day.html and pass it data from this day. -->
+                                <td><a href="#">XX/XX/XXXX</a></td>
+                                <td>
+                                    0.00
+                                </td>
+                                <td class="text-green">
+                                    <i class="fa fa-usd"></i> 0.00
+                                </td>
+                                <td class="hidden-xs">Project 3, Project 2</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Sum</th>
+                                <th>0.00</th>
+                                <th class="text-green">
+                                    <i class="fa fa-usd"></i> 0.00
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <!-- Remove this when the data has loaded -->
+            <div class="overlay">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+        </div>        
+        
+    </div>
+</div>
