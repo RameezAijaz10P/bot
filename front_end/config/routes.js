@@ -30,10 +30,6 @@
                     content_wrapper:{
                         templateUrl: "base_template/common_partials/_content_wrapper.html"
                     },
-                    left_side_bar:{
-
-                        templateUrl: "base_template/common_partials/_left_side_bar.html"
-                    },
                     footer:{
                         templateUrl: "base_template/common_partials/_footer.html"
                     }
