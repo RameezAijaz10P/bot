@@ -96,6 +96,26 @@
                 }
 
             }
+        }).state('base_template.partials.project', {
+            url: "/project",
+            views:{
+                'content@base_template.partials':{
+                    templateUrl: "home/project.html",
+                    controller: "projectController",
+                    controllerAs: "projectController"
+                }
+
+            }
+        }).state('base_template.partials.projects', {
+            url: "/projects",
+            views:{
+                'content@base_template.partials':{
+                    templateUrl: "home/projects.html",
+                    controller: "projectsController",
+                    controllerAs: "projectsController"
+                }
+
+            }
         });
         /* Add New Routes Above */
         $urlRouterProvider.otherwise('/login');
