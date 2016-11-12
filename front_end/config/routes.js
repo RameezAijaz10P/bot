@@ -49,7 +49,46 @@
                     controllerAs: "homeController"
                 }
             }
+        }).state('base_template.partials.login', {
+            url: "/login",
+            views:{
+                'content@base_template.partials':{
+                    templateUrl: "home/login.html",
+                    controller: "loginController",
+                    controllerAs: "loginController"
+                }
 
+            }
+        }).state('base_template.partials.stats', {
+            url: "/stats",
+            views:{
+                'content@base_template.partials':{
+                    templateUrl: "home/stats.html",
+                    controller: "statsController",
+                    controllerAs: "statsController"
+                }
+
+            }
+        }).state('base_template.partials.day', {
+            url: "/day",
+            views:{
+                'content@base_template.partials':{
+                    templateUrl: "home/day.html",
+                    controller: "dayController",
+                    controllerAs: "dayController"
+                }
+
+            }
+        }).state('base_template.partials.history', {
+            url: "/history",
+            views:{
+                'content@base_template.partials':{
+                    templateUrl: "home/history.html",
+                    controller: "historyController",
+                    controllerAs: "historyController"
+                }
+
+            }
         });
     }
 
