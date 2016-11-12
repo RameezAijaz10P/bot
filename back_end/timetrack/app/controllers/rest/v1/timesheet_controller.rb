@@ -1,8 +1,6 @@
 module Rest
   module V1
     class TimesheetController < ApplicationController
-      #respond_to :json
-
       # creates new clock_in entry and updates the clock_out
       def clock
          action = params[:test]
@@ -14,7 +12,7 @@ module Rest
                                   user_id: params[:project_id],
                                   slack: params[:slack],date: time.to_date, start_time: currenttime)
           if @timesheet.save
-            render json: @timesheet, status: :created
+            render json: {status: "success", data: @timesheet}, status: :created
           else
             render json: { errors: @timesheet.errors }, status: :unprocessable_entity
           end
@@ -22,7 +20,7 @@ module Rest
       elsif action == "clock_out"
         @timesheet = Timesheet.where('user_id = ? AND project_id = ? AND end_time IS ?', params[:user_id], params[:project_id], nil)
         if @timesheet.update(end_time: currenttime)
-          render json: @timesheet, status: :ok
+          render json: {status: "success", data: @timesheet}, status: :ok
         else
           render json: { errors: @timesheet.errors }, status: :unprocessable_entity
         end
@@ -38,7 +36,7 @@ module Rest
     else
       @timesheet = Timesheet.all
     end
-        render json: @timesheet
+        render json: {status: "success", data: @timesheet}
     end
   end
 end
