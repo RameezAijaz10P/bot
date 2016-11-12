@@ -14,7 +14,7 @@ module Rest
                                   user_id: params[:project_id],
                                   slack: params[:slack],date: time.to_date, start_time: currenttime)
           if @timesheet.save
-            render json: @timesheet, status: OK
+            render json: @timesheet, status: :created
           else
             render json: { errors: @timesheet.errors }, status: :unprocessable_entity
           end
@@ -22,18 +22,23 @@ module Rest
       elsif action == "clock_out"
         @timesheet = Timesheet.where('user_id = ? AND project_id = ? AND end_time IS ?', params[:user_id], params[:project_id], nil)
         if @timesheet.update(end_time: currenttime)
-          render json: @timesheet, status: OK
+          render json: @timesheet, status: :ok
         else
           render json: { errors: @timesheet.errors }, status: :unprocessable_entity
         end
       end
     end
-
+    # fetch the history for given date
     def history
-      @start_date = params['start_date'].to_date
-      @end_date = params['end_date'].to_date
-      @timesheet = Timesheet.where(date: @start_date..@end_date)
-      render json: @timesheet
+      if params['start_date']!= nil && params['end_date'] != nil
+        @start_date = params['start_date'].to_date
+        @end_date = params['end_date'].to_date
+        @timesheet = Timesheet.where(date: @start_date..@end_date)
+
+    else
+      @timesheet = Timesheet.all
+    end
+        render json: @timesheet
     end
   end
 end
