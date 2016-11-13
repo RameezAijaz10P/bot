@@ -96,6 +96,15 @@
                 }
 
             }
+        }).state('base_template.partials.account', {
+            url: "/account",
+            views: {
+                'content@base_template.partials': {
+                    templateUrl: "account/account.html",
+                    controller: "accountController as accountCtrl"
+                }
+
+            }
         });
         /* Add New Routes Above */
         $urlRouterProvider.otherwise('/login');
