@@ -1,5 +1,5 @@
 (function(){
-    angular.module('seedApp', ['mgcrea.ngStrap','ui.router','ngAnimate']);
+    angular.module('bot', ['mgcrea.ngStrap','ui.router','ngAnimate']);
 
 })();
 

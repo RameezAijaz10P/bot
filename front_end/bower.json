@@ -1,5 +1,5 @@
 {
-  "name": "seedapp",
+  "name": "bot",
   "version": "0.0.0",
   "main": "dist/index.html",
   "ignore": [

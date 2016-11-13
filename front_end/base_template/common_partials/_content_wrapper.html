@@ -3,12 +3,12 @@
 <div class="container">
 <section class="content-header animated fadeInRight">
     <h1>
-        Dashboard
-        <small>Control panel</small>
+        {{$state.current.data.page_title}}
+        <small>{{$state.current.data.sub_title}}</small>
     </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+    <ol ng-hide="$state.current.data.page_title.toLowerCase().indexOf('dashboard')>-1" class="breadcrumb">
+        <li><a href="" ui-sref="base_template.partials.dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">{{$state.current.data.page_title}}</li>
     </ol>
 </section>
 

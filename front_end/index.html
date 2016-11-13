@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="seedApp">
+<html ng-app="bot">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,41 +8,49 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <link href="app.less" type="text/css" rel="stylesheet/less">
+    <!-- JS from Bower Components -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/less.js/dist/less.min.js" data-concat="false"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.compat.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
+    <!-- Add New Bower Component JS Above -->
+
+
+    <!-- Main App JS -->
+    <script src="app.js"></script>
+    <!-- Add New Component JS Above -->
+    <script src="config/routes.js"></script>
+    <script src="config/bot_run.js"></script>
+    <script src="base_template/base_template_controller.js"></script>
+    <script src="dashboard/dashboard_controller.js"></script>
+    <script src="history/history_controller.js"></script>
+    <script src="project/project_controller.js"></script>
+    <script src="projects_summary/projects_summary_controller.js"></script>
+    <script src="project/project_controller.js"></script>
+    <script src="stats/stats_controller.js"></script>
+    <script src="daily_record/daily_record_controller.js"></script>
+    <script src="login/login_controller.js"></script>
 
 </head>
-<body class="layout-top-nav skin-purple" >
+<body class=""
+      ng:class="{true:'hold-transition login-page', false:'layout-top-nav skin-purple'}[
+                         $state.current.name.indexOf('login')>-1
+                         ]">
 
 <title>BOT | Be On Time</title>
-  <!-- JS from Bower Components -->
-  <script src="bower_components/angular/angular.min.js" ></script>
-  <script src="bower_components/less.js/dist/less.min.js" data-concat="false" ></script>
-  <script src="bower_components/jquery/dist/jquery.min.js" ></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js" ></script>
-  <script src="bower_components/angular-strap/dist/angular-strap.compat.min.js" ></script>
-  <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js" ></script>
-  <script src="bower_components/angular-animate/angular-animate.min.js" ></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js" ></script>
 
-  <!-- Add New Bower Component JS Above -->
+<div class="wrapper" ui-view>
 
 
-  <!-- Main App JS -->
-  <script src="app.js"></script>
-  <!-- Add New Component JS Above -->
-  <script src="config/routes.js"></script>
-  <script src="base_template/base_template_controller.js"></script>
-  <script src="home/home_controller.js"></script>
+</div>
 
 
-  <div class="wrapper" ui-view>
-
-
-  </div>
-
-
-
-<script src="assets/js/pace.min.js" ></script>
-<script src="assets/js/theme.js" ></script>
+<script src="assets/js/pace.min.js"></script>
+<script src="assets/js/theme.js"></script>
 </body>
 </html>

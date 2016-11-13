@@ -3,14 +3,11 @@
  */
 (function(){
     'use strict';
-     angular.module('seedApp').controller('baseTemplateController',baseTemplateController);
+     angular.module('bot').controller('baseTemplateController',baseTemplateController);
 
     baseTemplateController.$inject= [];
     function baseTemplateController(){
-
-
-
-
+        var baseTemplateCtrl =this;
     }
 
 
