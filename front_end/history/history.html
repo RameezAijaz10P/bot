@@ -24,13 +24,13 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody ng-controller="repeatController">
+                        <tbod>
                         <!--
                             Show past 2 weeks (and only past 2 weeks), later add pagination
                         -->
                         <tr ng-repeat="n in [1,2,3,4,5,6,7,8,9,10] track by $index">
                             <!-- Link this to the page day.html and pass it data from this day. -->
-                            <td><a href="#">XX/XX/XXXX</a></td>
+                            <td><a href="" ui-sref="base_template.partials.daily_record">XX/XX/XXXX</a></td>
                             <td>
                                 0.00
                             </td>
@@ -39,7 +39,7 @@
                             </td>
                             <td class="hidden-xs">Project 3, Project 2</td>
                         </tr>
-                        </tbody>
+                        </tbod>
                         <tfoot>
                         <tr>
                             <th>Sum</th>
