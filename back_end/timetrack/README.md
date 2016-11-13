@@ -1,6 +1,7 @@
 # README
 
 Endpoints:
+
 1. clock-in and clock-out => POST -- rest/v1/timesheet/:test
                           WHERE test = "clock_in/clock_out"
    Parameters: user_id, proj_id(project ID) , slack
