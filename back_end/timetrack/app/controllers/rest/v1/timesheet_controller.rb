@@ -1,8 +1,6 @@
 module Rest
   module V1
     class TimesheetController < ApplicationController
-      #respond_to :json
-
       # creates new clock_in entry and updates the clock_out
       def clock
          action = params[:test]
@@ -48,7 +46,7 @@ module Rest
 
           #fetch the hours for the dates in the table
           def hours
-            @timesheet = Timesheet.select("hours,date").group('date').sum(:hours)
+            @timesheet = Timesheet.select("hours,date").where('user_id = ?', params[:user_id]).group('date').sum(:hours)
             @newtimesheet = Hash.new
             array = []
             @timesheet.each_pair { |key, value|

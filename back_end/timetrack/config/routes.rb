@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'timesheet/:test' => 'timesheet#clock'
       get 'timesheet/history/' => 'timesheet#history'
+      get 'timesheet/hours/:user_id'   => 'timesheet#hours'
     end
   end
 end
