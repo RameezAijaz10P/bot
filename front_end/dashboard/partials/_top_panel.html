@@ -33,20 +33,40 @@
         </div>
     </div>
     <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box box box-solid">
+        <div class="info-box box box-solid" ng-switch="condition">
             <!--
-                Pull data from OpenWeatherApp or something.
+                Pull data from OpenWeatherMap or something.
                 Make the icon:
                     fa-tint, blue if rain
+                    fa-cloud, blue if clouds
                     fa-sun-o, yellow if sunny
                     fa-snowflake-o, grey or something if snow
+                    fa-exclamation-triangle, red if other
             -->
-            <span class="info-box-icon bg-blue">
+            <span class="info-box-icon bg-blue" ng-switch-when="rain">
                 <i class="fa fa-tint"></i>
+            </span>
+            <span class="info-box-icon bg-yellow" ng-switch-when="thunderstorm">
+                <i class="fa fa-bolt"></i>
+            </span>
+            <span class="info-box-icon bg-blue" ng-switch-when="cloud">
+                <i class="fa fa-cloud"></i>
+            </span>
+            <span class="info-box-icon bg-yellow" ng-switch-when="sunny">
+                <i class="fa fa-sun-o"></i>
+            </span>
+            <span class="info-box-icon bg-gray" ng-switch-when="snow">
+                <i class="fa fa-snowflake-o"></i>
+            </span>
+            <span class="info-box-icon bg-red" ng-switch-when="extreme">
+                <i class="fa fa-exclamation-triangle"></i>
+            </span>
+            <span class="info-box-icon bg-purple" ng-switch-default>
+                <i class="fa fa-question"></i>
             </span>
             <div class="info-box-content">
                 <span class="info-box-text">Weather</span>
-                <span class="info-box-number">64F, Rain</span>
+                <span class="info-box-number">{{temp}}F, {{weather}}</span>
             </div>
         </div>
     </div>
