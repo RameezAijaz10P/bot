@@ -36,7 +36,7 @@
             }
         }).state('base_template.partials.dashboard', {
             url: "/dashboard",
-            data:{page_title:'Dashboard', sub_title:'summary'},
+            data:{page_title:'Dashboard', sub_title:''},
             views: {
                 'content@base_template.partials': {
                     templateUrl: "dashboard/dashboard.html",
@@ -80,6 +80,7 @@
             }
         }).state('base_template.partials.project', {
             url: "/project",
+            data:{page_title:'Project Information', sub_title:''},
             views: {
                 'content@base_template.partials': {
                     templateUrl: "project/project.html",
@@ -89,6 +90,7 @@
             }
         }).state('base_template.partials.projects', {
             url: "/projects_summary",
+            data:{page_title:'Project List', sub_title:''},
             views: {
                 'content@base_template.partials': {
                     templateUrl: "projects_summary/projects_summary.html",
@@ -98,6 +100,7 @@
             }
         }).state('base_template.partials.account', {
             url: "/account",
+            data:{page_title:'My Account', sub_title:''},
             views: {
                 'content@base_template.partials': {
                     templateUrl: "account/account.html",
